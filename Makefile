@@ -9,5 +9,8 @@
 #    Updated: 2025/05/21 16:18:01 by lucpardo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+CC=cc
+CFLAGS = -Wall -Wextra -Werror
 
+NAME = libftprintf.a
 
