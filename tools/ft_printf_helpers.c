@@ -6,7 +6,7 @@
 /*   By: lucpardo <lucpardo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 22:09:56 by lucpardo          #+#    #+#             */
-/*   Updated: 2025/05/22 22:41:25 by lucpardo         ###   ########.fr       */
+/*   Updated: 2025/05/22 23:00:37 by lucpardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../ft_printf.h"
@@ -19,32 +19,36 @@ ft_string(char *str)
 		return (6);
 	}
 	ft_putstr_fd(str, 1);
-	return (ft_strlen(str)); 
+	return (ft_strlen(str));
 }
 
 // putcount recursively prints positive long integer
-// and counts digits that have been printed, used 
+// and counts digits that have been printed, used
 // for integer and unsigned helper functinos
-ft_putcount(unsigned long nbr)
+static int	ft_putcount(unsigned long nbr)
 {
 	int	i;
 
 	i = 0;
 	if (nbr >= 10)
 	{
-		i += ft_print_count(nbr / 10);
+		i += ft_putcount(nbr / 10);
 	}
 	ft_putchar_fd((nbr % 10) + '0', 1);
 	i++;
 	return (i);
 }
-
-ft_integer(int n)
+// for d and i, returns number of characters to print
+int	ft_integer(int n)
 {
-}
+	char	*str;
+	int	i;
 
-// string
-// decimal and integer
-// unsigned
-// hexadecimal
-// pointer
+	str = ft_itoa(n);
+	if (str == NULL)
+		return (0);
+	ft_putstr_fd(str, 1);
+	i = ft_strlen(str);
+	free(str);
+	return (i);
+}
