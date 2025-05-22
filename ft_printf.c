@@ -6,7 +6,7 @@
 /*   By: lucpardo <lucpardo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 20:51:57 by lucpardo          #+#    #+#             */
-/*   Updated: 2025/05/21 20:53:42 by lucpardo         ###   ########.fr       */
+/*   Updated: 2025/05/22 22:04:54 by lucpardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -20,10 +20,22 @@
 // %x Prints a number in hexadecimal (base 16) lowercase format.
 // %X Prints a number in hexadecimal (base 16) uppercase format.
 // %% Prints a percent sign.
+static int	ft_echarpe(char specifier, va_list ap)
+{
+	if (format_specifier == 'c' || format_specifier == '%')
+	{
+		if (format_specifier == 'c')
+			ft_putchar_fd((char)va_arg(ap, int), 1);
+		else
+			ft_putchar_fd('%', 1);
+		return (1);
+	}
+}
+
 int	ft_types(char format_specifier, va_list ap)
 {
-	if (format_specifier == 'c')
-		return (ft_putchar(va_arg(
+	if (format_specifier == 'c' || format_specifier == '%')
+		return (ft_echarpe(format_specifier, ap));
 }
 
 // va_list holds list of variable args
