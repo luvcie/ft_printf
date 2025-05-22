@@ -9,15 +9,47 @@
 /*   Updated: 2025/05/21 20:53:42 by lucpardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_printf.h"
 
-#include <ft_printf.h>
-
-int	ft_types(char c, va_list args, int *nbr)
+// %c Prints a single character.
+// %s Prints a string (as defined by the common C convention).
+// %p The void * pointer argument has to be printed in hexadecimal format.
+// %d Prints a decimal (base 10) number.
+// %i Prints an integer in base 10.
+// %u Prints an unsigned decimal (base 10) number.
+// %x Prints a number in hexadecimal (base 16) lowercase format.
+// %X Prints a number in hexadecimal (base 16) uppercase format.
+// %% Prints a percent sign.
+int	ft_types(char format_specifier, va_list ap)
 {
-
+	if (format_specifier == 'c')
+		return (ft_putchar(va_arg(
 }
 
-int	ft_printf(const char *s, ...)
+// va_list holds list of variable args
+// va_end finalizes argument pointer(ap)
+int	ft_printf(const char *str, ...)
 {
+	va_list	ap;
+	int		i;
+	int		total_len;
 
+	total_len = 0;
+	i = 0;
+	va_start(ap, str);
+	while (str[i] != '\0')
+	{
+		if (str[i] == '%')
+		{
+			i++;
+			if (str[i] == '\0')
+				break ;
+			total_len += ft_types(str[i], ap);
+		}
+		else
+			total_len += write(1, &str[i], 1);
+		i++;
+	}
+	va_end(ap);
+	return (total_len);
 }

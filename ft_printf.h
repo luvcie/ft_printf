@@ -9,13 +9,10 @@
 /*   Updated: 2025/05/22 19:52:45 by lucpardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+# include "tools/libft/libft.h"
 # include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
 
 int	ft_printf(const char *str, ...);
 
