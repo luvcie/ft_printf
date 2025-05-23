@@ -13,17 +13,31 @@
 
 // putcount recursively prints positive long integer
 // and counts digits that have been printed
-// used for unsigned and hexa helper functinos
-static int	ft_putcount(unsigned long nbr)
+// used for unsigned helper functino
+static int	ft_putucount(unsigned long nbr)
 {
 	int	i;
 
 	i = 0;
 	if (nbr >= 10)
 	{
-		i += ft_putcount(nbr / 10);
+		i += ft_putucount(nbr / 10);
 	}
 	ft_putchar_fd((nbr % 10) + '0', 1);
+	i++;
+	return (i);
+}
+
+static int	ft_puthexcount(unsigned long nbr, const char *hex_nbrs)
+{
+	int	i;
+
+	i = 0;
+	if (nbr >= 16)
+	{
+		i += ft_puthexcount(nbr / 16, hex_nbrs);
+	}
+	ft_putchar_fd(hex_nbrs[nbr % 16], 1);
 	i++;
 	return (i);
 }
@@ -35,14 +49,29 @@ int ft_unsigned(unsigned int u)
 		ft_putchar_fd('0', 1);
 		return (1);
 	}
-	return (ft_putcount((unsigned long)u));
+	return (ft_putucount((unsigned long)u));
 }
 
 int ft_hexadecimal(unsigned int nbr, int is_upper)
 {
-	(void)nbr;
-	(void)is_upper;
-	return (0);
+	char	*hex_lower;
+	char	*hex_upper;
+
+	hex_lower = "0123456789abcdef";
+	hex_upper = "0123456789ABCDEF";
+	if (nbr == 0)
+	{
+		ft_putchar_fd('0', 1);
+		return (1);
+	}
+	if (is_upper == 1)
+	{
+		return (ft_puthexcount((unsigned long)nbr, hex_upper));
+	}
+	else
+	{
+		return (ft_puthexcount((unsigned long)nbr, hex_lower));
+	}
 }
 
 int ft_pointer(void *ptr)
