@@ -22,11 +22,11 @@
 // %% Prints a percent sign.
 static int	ft_echarpe(char specifier, va_list ap)
 {
-		if (specifier == 'c')
-			ft_putchar_fd((char)va_arg(ap, int), 1);
-		else
-			ft_putchar_fd('%', 1);
-		return (1);
+	if (specifier == 'c')
+		ft_putchar_fd((char)va_arg(ap, int), 1);
+	else
+		ft_putchar_fd('%', 1);
+	return (1);
 }
 
 int	ft_types(char format_specifier, va_list ap)
