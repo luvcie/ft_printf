@@ -79,16 +79,16 @@ int	ft_pointer(void *ptr)
 	int				i;
 	unsigned long	j;
 
-	i = 0;
-	ft_putstr_fd("0x", 1);
-	i += 2;
 	if (ptr == NULL)
 	{
-		ft_putchar_fd('0', 1);
-		i++;
+		ft_putstr_fd("(nil)", 1);
+		return (5);
 	}
 	else
 	{
+		i = 0;
+		ft_putstr_fd("0x", 1);
+		i += 2;
 		j = (unsigned long)ptr;
 		i += ft_puthexcount(j, "0123456789abcdef");
 	}
