@@ -85,7 +85,7 @@ int	ft_pointer(void *ptr)
 	if (ptr == NULL)
 	{
 		ft_putchar_fd('0', 1);
-		char_count++;
+		i++;
 	}
 	else
 	{
