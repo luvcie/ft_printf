@@ -27,7 +27,6 @@ static int	ft_echarpe(char specifier, va_list ap)
 		else
 			ft_putchar_fd('%', 1);
 		return (1);
-	}
 }
 
 int	ft_types(char format_specifier, va_list ap)
