@@ -11,12 +11,13 @@
 /* ************************************************************************** */
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
 # include "tools/libft/libft.h"
 # include <stdarg.h>
 
 int	ft_printf(const char *str, ...);
+
 int	ft_string(char *str);
-static int	ft_putcount(unsigned long nbr);
 int	ft_integer(int n);
 int	ft_unsigned(unsigned int u);
 int	ft_hexadecimal(unsigned int nbr, int is_upper);
