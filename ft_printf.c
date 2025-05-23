@@ -38,7 +38,7 @@ int	ft_types(char format_specifier, va_list ap)
 		return (ft_echarpe(format_specifier, ap));
 	else if (format_specifier == 's')
 		return (ft_string(va_arg(ap, char *)));
-	else if (format specifier == 'd' || format_specifier == 'i')
+	else if (format_specifier == 'd' || format_specifier == 'i')
 		return (ft_integer(va_arg(ap, int)));
 	else if (format_specifier == 'u')
 		return (ft_unsigned(va_arg(ap, unsigned int)));
