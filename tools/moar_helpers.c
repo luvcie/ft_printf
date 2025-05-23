@@ -11,6 +11,23 @@
 /* ************************************************************************** */
 #include "../ft_printf.h"
 
+// putcount recursively prints positive long integer
+// and counts digits that have been printed, used
+// for unsigned helper functino
+static int	ft_putcount(unsigned long nbr)
+{
+	int	i;
+
+	i = 0;
+	if (nbr >= 10)
+	{
+		i += ft_putcount(nbr / 10);
+	}
+	ft_putchar_fd((nbr % 10) + '0', 1);
+	i++;
+	return (i);
+}
+
 int ft_unsigned(unsigned int u)
 {
 

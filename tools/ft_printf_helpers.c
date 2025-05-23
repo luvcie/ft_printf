@@ -22,23 +22,6 @@ int	ft_string(char *str)
 	return (ft_strlen(str));
 }
 
-// putcount recursively prints positive long integer
-// and counts digits that have been printed, used
-// for integer and unsigned helper functinos
-static int	ft_putcount(unsigned long nbr)
-{
-	int	i;
-
-	i = 0;
-	if (nbr >= 10)
-	{
-		i += ft_putcount(nbr / 10);
-	}
-	ft_putchar_fd((nbr % 10) + '0', 1);
-	i++;
-	return (i);
-}
-
 // for d and i, returns number of characters to print
 int	ft_integer(int n)
 {
