@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "../ft_printf.h"
 
-ft_string(char *str)
+int	ft_string(char *str)
 {
 	if (str == NULL)
 	{

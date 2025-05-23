@@ -13,4 +13,8 @@ CC=cc
 CFLAGS = -Wall -Wextra -Werror
 
 NAME = libftprintf.a
+SRCS = ft_printf.c \
+	   tools/helpers.c \
+	   tools/moar_helpers.c \
 
+OBJS = $(SRC:
