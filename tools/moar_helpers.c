@@ -76,5 +76,21 @@ int ft_hexadecimal(unsigned int nbr, int is_upper)
 
 int ft_pointer(void *ptr)
 {
+	int	i;
+	unsigned long	j;
 
+	i = 0;
+	ft_putstr_fd("0x", 1);
+	i += 2;
+	if (ptr == NULL)
+	{
+		ft_putchar_fd('0', 1);
+		char_count++;
+	}
+	else
+	{
+		j = (unsigned long)ptr;
+		i += ft_puthexcount(j, "0123456789abcdef");
+	}
+	return (i);
 }
