@@ -38,11 +38,12 @@ static int	ft_putcount(unsigned long nbr)
 	i++;
 	return (i);
 }
+
 // for d and i, returns number of characters to print
 int	ft_integer(int n)
 {
 	char	*str;
-	int	i;
+	int		i;
 
 	str = ft_itoa(n);
 	if (str == NULL)
