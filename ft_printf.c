@@ -40,8 +40,8 @@ int	ft_types(char format_specifier, va_list ap)
 		return (ft_string(va_arg(ap, char *)));
 	else if (format specifier == 'd' || format_specifier == 'i')
 		return (ft_integer(va_arg(ap, int)));
-	else if (format specifier == 'u')
-		return (ft_usigned(va_arg(ap, unsigned int)));
+	else if (format_specifier == 'u')
+		return (ft_unsigned(va_arg(ap, unsigned int)));
 	else if (format_specifier == 'x')
 		return (ft_hexadecimal(va_arg(ap, unsigned int), 0));
 	else if (format_specifier == 'X')
