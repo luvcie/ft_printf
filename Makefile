@@ -33,8 +33,8 @@ $(LIBFT):
 	@$(MAKE) -C $(LIBFT_DIR)
 	@echo "libft built!" 
 
-$(NAME): $(LIBFT) $(OBJS)
-	@$(AR) $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(LIBFT)
+	@$(AR) $(NAME) $(OBJS) $(shell find $(LIBFT_DIR) -maxdepth 1 -name "*.o")
 	@echo "$(NAME) built!"
 
 %.o: %.c ft_printf.h tools/libft/libft.h
