@@ -42,7 +42,7 @@ static int	ft_puthexcount(unsigned long nbr, const char *hex_nbrs)
 	return (i);
 }
 
-int ft_unsigned(unsigned int u)
+int	ft_unsigned(unsigned int u)
 {
 	if (u == 0)
 	{
@@ -52,7 +52,7 @@ int ft_unsigned(unsigned int u)
 	return (ft_putucount((unsigned long)u));
 }
 
-int ft_hexadecimal(unsigned int nbr, int is_upper)
+int	ft_hexadecimal(unsigned int nbr, int is_upper)
 {
 	char	*hex_lower;
 	char	*hex_upper;
@@ -74,9 +74,9 @@ int ft_hexadecimal(unsigned int nbr, int is_upper)
 	}
 }
 
-int ft_pointer(void *ptr)
+int	ft_pointer(void *ptr)
 {
-	int	i;
+	int				i;
 	unsigned long	j;
 
 	i = 0;
