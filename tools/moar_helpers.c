@@ -12,8 +12,8 @@
 #include "../ft_printf.h"
 
 // putcount recursively prints positive long integer
-// and counts digits that have been printed, used
-// for unsigned helper functino
+// and counts digits that have been printed
+// used for unsigned and hexa helper functinos
 static int	ft_putcount(unsigned long nbr)
 {
 	int	i;
@@ -30,12 +30,19 @@ static int	ft_putcount(unsigned long nbr)
 
 int ft_unsigned(unsigned int u)
 {
-
+	if (u == 0)
+	{
+		ft_putchar_fd('0', 1);
+		return (1);
+	}
+	return (ft_putcount((unsigned long)u));
 }
 
 int ft_hexadecimal(unsigned int nbr, int is_upper)
 {
-
+	(void)nbr;
+	(void)is_upper;
+	return (0);
 }
 
 int ft_pointer(void *ptr)
