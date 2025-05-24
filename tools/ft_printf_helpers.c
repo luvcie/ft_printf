@@ -6,7 +6,7 @@
 /*   By: lucpardo <lucpardo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 22:09:56 by lucpardo          #+#    #+#             */
-/*   Updated: 2025/05/24 18:02:43 by lucpardo         ###   ########.fr       */
+/*   Updated: 2025/05/24 18:04:10 by lucpardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../ft_printf.h"
@@ -29,7 +29,9 @@ int	ft_integer(int n)
 
 	str = ft_itoa(n);
 	if (str == NULL)
+	{
 		return (0);
+	}
 	ft_putstr_fd(str, 1);
 	i = ft_strlen(str);
 	free(str);
