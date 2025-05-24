@@ -6,7 +6,7 @@
 /*   By: lucpardo <lucpardo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 20:51:57 by lucpardo          #+#    #+#             */
-/*   Updated: 2025/05/22 22:04:54 by lucpardo         ###   ########.fr       */
+/*   Updated: 2025/05/24 21:49:33 by lucpardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -23,9 +23,13 @@
 static int	ft_echarpe(char specifier, va_list ap)
 {
 	if (specifier == 'c')
+	{
 		ft_putchar_fd((char)va_arg(ap, int), 1);
+	}
 	else
+	{
 		ft_putchar_fd('%', 1);
+	}
 	return (1);
 }
 
