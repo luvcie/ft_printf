@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_moar_helpers.c                                  :+:      :+:    :+:   */
+/*   moar_helpers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucpardo <lucpardo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 22:26:14 by lucpardo          #+#    #+#             */
-/*   Updated: 2025/05/22 22:28:09 by lucpardo         ###   ########.fr       */
+/*   Updated: 2025/05/24 17:19:00 by lucpardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../ft_printf.h"
@@ -52,7 +52,7 @@ int	ft_unsigned(unsigned int u)
 	return (ft_putucount((unsigned long)u));
 }
 
-int	ft_hexadecimal(unsigned int nbr, int is_upper)
+int	ft_hexadecimal(unsigned int nbr, int isupper_flag)
 {
 	char	*hex_lower;
 	char	*hex_upper;
@@ -64,7 +64,7 @@ int	ft_hexadecimal(unsigned int nbr, int is_upper)
 		ft_putchar_fd('0', 1);
 		return (1);
 	}
-	if (is_upper == 1)
+	if (isupper_flag == 1)
 	{
 		return (ft_puthexcount((unsigned long)nbr, hex_upper));
 	}
