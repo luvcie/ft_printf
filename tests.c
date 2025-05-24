@@ -91,8 +91,8 @@ int	main(void)
 	ft_printf("now a lonely %% with no specifier returned... %d", ret);
 	ft_printf("it should have also returned -1!");
 	ft_sep();
-	ret = ft_printf("%d%", 123);
-	ft_printf("and %d%% with incomplete format returned: %d", 123, ret);
+	ret = ft_printf("%d%", 777);
+	ft_printf("and %d%% with incomplete format returned: %d", 777, ret);
 	ft_sep();
 	ft_printf("hopefully that returned -1 and didn't explode!");
 	ft_sep();
