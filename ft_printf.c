@@ -56,6 +56,8 @@ int	ft_printf(const char *str, ...)
 	int		i;
 	int		total_len;
 
+	if (str == NULL)
+		return (-1);
 	total_len = 0;
 	i = 0;
 	va_start(ap, str);
@@ -65,7 +67,7 @@ int	ft_printf(const char *str, ...)
 		{
 			i++;
 			if (str[i] == '\0')
-				break ;
+				return (-1);
 			total_len += ft_types(str[i], ap);
 		}
 		else
