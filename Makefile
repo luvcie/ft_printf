@@ -11,19 +11,15 @@
 # **************************************************************************** #
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-
 NAME = libftprintf.a
-
 SRCS = ft_printf.c \
 	   tools/ft_printf_helpers.c \
-	   tools/moar_helpers.c \
+	   tools/moar_helpers.c
 
 LIBFT_DIR = tools/libft
 LIBFT = $(LIBFT_DIR)/libft.a
 INC_DIRS = -I. -Itools/libft
-
 OBJS = $(SRCS:.c=.o)
-
 AR = ar rcs
 RM = rm -f
 
@@ -31,10 +27,11 @@ all: $(NAME)
 
 $(LIBFT):
 	@$(MAKE) -C $(LIBFT_DIR)
-	@echo "libft built!" 
+	@echo "libft built!"
 
 $(NAME): $(OBJS) $(LIBFT)
-	@$(AR) $(NAME) $(OBJS) $(shell find $(LIBFT_DIR) -maxdepth 1 -name "*.o")
+	@cp $(LIBFT) $(NAME)
+	@$(AR) $(NAME) $(OBJS)
 	@echo "$(NAME) built!"
 
 %.o: %.c ft_printf.h tools/libft/libft.h
@@ -52,4 +49,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re libft
+.PHONY: all clean fclean re
