@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
+#include <stdio.h>
 
 void	ft_start(void)
 {
@@ -101,6 +102,21 @@ int	main(void)
 	ft_memset(str, '*', 1500);
 	str[1500] = '\0';
 	ft_printf("%s", str);
+	ft_sep();
+	ft_printf("and again to make sure, more ft_printf(0) tests \n");
+	printf("\n");
+	ft_printf("");
+	printf("with real printf: \n");
+	printf(0);
+	printf("\n");
+	ft_printf("with ft_printf: ");
+	ft_printf(0);
+	ft_printf(NULL);
+	ft_sep();
+	ft_printf("hello %d");
+	ft_sep();
+	ft_printf("hello %d", 42, "test", 55);
+	ft_printf("letter %c string %s pointer %p decimal %d integer %i unsigned %u hexa %x HEXA %X percentage %%", 'o', "hello", ptr, 42, 1337, 111, 0x1B2A1C, 0x4A5A6A); 
 	ft_sep();
 	ft_printf("I hope all worked! :D");
 	ft_sep();
