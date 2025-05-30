@@ -71,7 +71,7 @@ int	main(void)
 	ft_sep();
 	ft_printf("in lowercase: %x", 0x48656c6c6f);
 	ft_sep();
-	ft_printf("in uppercase: %x", 0x776F726C640D0A);
+	ft_printf("in uppercase: %X", 0x776F726C640D0A);
 	ft_sep();
 	ft_printf("but can it print the percent sign?: %%");
 	ft_sep();
