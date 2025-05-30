@@ -148,6 +148,7 @@ int	main(void)
 	ft_printf("ft_printf passing a character as %c", NULL);
 	ft_sep();
 	printf("printf passing a character as %c \n", 0);
+	ft_sep();
 	ft_printf("ft_printf passing a character as %c", 0);
 	ft_sep();
 	ft_printf("hello i'm %u", NULL);
