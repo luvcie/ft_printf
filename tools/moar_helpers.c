@@ -6,7 +6,7 @@
 /*   By: lucpardo <lucpardo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 22:26:14 by lucpardo          #+#    #+#             */
-/*   Updated: 2025/05/24 17:19:00 by lucpardo         ###   ########.fr       */
+/*   Updated: 2025/05/30 19:43:29 by lucpardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../ft_printf.h"
@@ -28,16 +28,16 @@ static int	ft_putucount(unsigned long nbr)
 	return (i);
 }
 
-static int	ft_puthexcount(unsigned long nbr, const char *hex_nbrs)
+static int	ft_puthexcount(unsigned long nbr, const char *hex_type)
 {
 	int	i;
 
 	i = 0;
 	if (nbr >= 16)
 	{
-		i += ft_puthexcount(nbr / 16, hex_nbrs);
+		i += ft_puthexcount(nbr / 16, hex_type);
 	}
-	ft_putchar_fd(hex_nbrs[nbr % 16], 1);
+	ft_putchar_fd(hex_type[nbr % 16], 1);
 	i++;
 	return (i);
 }
