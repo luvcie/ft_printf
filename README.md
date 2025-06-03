@@ -68,3 +68,5 @@ This project is part of the 42 School common core curriculum, focusing on:
 - Format string parsing
 - Memory management
 - Modular programming
+
+Grade: 100/100
