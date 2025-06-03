@@ -14,7 +14,7 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
 SRCS = ft_printf.c \
 	   tools/ft_printf_helpers.c \
-	   tools/moar_helpers.c
+	   tools/ft_printf_more_helpers.c
 
 LIBFT_DIR = tools/libft
 LIBFT = $(LIBFT_DIR)/libft.a
